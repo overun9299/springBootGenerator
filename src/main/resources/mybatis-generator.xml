@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!--&lt;!&ndash; Controller &ndash;&gt;-->
+        <!--<plugin type="tk.mybatis.mapper.generator.TemplateFilePlugin">-->
+            <!--<property name="targetProject" value="src/main/java"/>-->
+            <!--<property name="targetPackage" value="overun.soap.controller"/>-->
+            <!--<property name="templatePath" value="classpass:template/Controller.ftl"/>-->
+            <!--<property name="fileName" value="${tableClass.shortClassName}Controller.java"/>-->
+        <!--</plugin>-->
+
+        <!--&lt;!&ndash; Service接口 &ndash;&gt;-->
+        <!--<plugin type="tk.mybatis.mapper.generator.TemplateFilePlugin">-->
+            <!--<property name="targetProject" value="src/main/java"/>-->
+            <!--<property name="targetPackage" value="overun.soap.service"/>-->
+            <!--<property name="templatePath" value="template/Service.ftl"/>-->
+            <!--<property name="fileName" value="${tableClass.shortClassName}Service.java"/>-->
+        <!--</plugin>-->
+
+        <!--&lt;!&ndash; ServiceImpl实现类 &ndash;&gt;-->
+        <!--<plugin type="tk.mybatis.mapper.generator.TemplateFilePlugin">-->
+            <!--<property name="targetProject" value="src/main/java"/>-->
+            <!--<property name="targetPackage" value="overun.soap.service.impl"/>-->
+            <!--<property name="templatePath" value="template/ServiceImpl.ftl"/>-->
+            <!--<property name="fileName" value="${tableClass.shortClassName}ServiceImpl.java"/>-->
+        <!--</plugin>-->
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!-- 数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.215.50.107:3306/crm_v1?characterEncoding=utf8"
+                        userId="root"
+                        password="12345678"/>
+
+        <!-- model生成 -->
+        <javaModelGenerator targetPackage="overun.soap.model" targetProject="src/main/java">
+        </javaModelGenerator>
+
+        <!-- MapperXML生成 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <!-- Mapper接口生成 -->
+        <javaClientGenerator targetPackage="overun.soap.mapper" targetProject="src/main/java" type="XMLMAPPER">
+
+        </javaClientGenerator>
+
+        <!-- 要生成的表 -->
+        <table tableName="crm_basic_info" domainObjectName="BasicInfo"></table>
+    </context>
+</generatorConfiguration>
