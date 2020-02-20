@@ -36,11 +36,17 @@
             <property name="suppressAllComments" value="true" />
         </commentGenerator>
 
+        <!--&lt;!&ndash; 数据库连接 &ndash;&gt;-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+                        <!--connectionURL="jdbc:mysql://127.0.0.1:3306/auth_center?characterEncoding=utf8"-->
+                        <!--userId="root"-->
+                        <!--password="root"/>-->
+
         <!-- 数据库连接 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.215.50.107:3306/crm_v1?characterEncoding=utf8"
-                        userId="root"
-                        password="12345678"/>
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://127.0.0.1:5432/test?characterEncoding=utf8"
+                        userId="postgres"
+                        password="263385"/>
 
         <!-- model生成 -->
         <javaModelGenerator targetPackage="overun.soap.model" targetProject="src/main/java">
@@ -55,6 +61,8 @@
         </javaClientGenerator>
 
         <!-- 要生成的表 -->
-        <table tableName="crm_basic_info" domainObjectName="BasicInfo"></table>
+        <table tableName="name" domainObjectName="Name"></table>
+
+
     </context>
 </generatorConfiguration>
