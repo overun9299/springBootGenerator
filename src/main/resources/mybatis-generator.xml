@@ -38,7 +38,7 @@
 
         <!--&lt;!&ndash; 数据库连接 &ndash;&gt;-->
         <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
-                        <!--connectionURL="jdbc:mysql://127.0.0.1:3306/auth_center?characterEncoding=utf8"-->
+                        <!--connectionURL="jdbc:mysql://127.0.0.1:3306/auth_center?characterEncoding=utf8&amp;tinyInt1isBit=false"-->
                         <!--userId="root"-->
                         <!--password="root"/>-->
 
